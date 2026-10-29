@@ -1,0 +1,44 @@
+# Archivos generados por Unity
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/MemoryCaptures/
+/Recordings/
+
+# Configuracion local y control de versiones de Unity
+/.plastic/
+/.vs/
+/.vscode/
+/.idea/
+*.csproj
+*.unityproj
+*.sln
+*.slnx
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+*.log
+*.tmp
+
+# Respaldos y resultados locales de verificacion
+/Respaldo*/
+/Verificacion*/
+
+# Credenciales y archivos del sistema
+.env
+.env.*
+!.env.example
+*.private
+*.private.meta
+.DS_Store
+Thumbs.db
+Desktop.ini

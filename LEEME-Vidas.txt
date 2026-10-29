@@ -1,0 +1,57 @@
+SISTEMA DE VIDAS DEL TUTORIAL - PROYECTO2
+
+Se conserva Nivel1, con el mismo terreno, senderos, decoracion, zorro,
+camara y posiciones de las 8 gemas y las 5 cerezas.
+
+COMO PROBARLO
+1. Abrir Assets/Scenes/Nivel1.unity en Unity 6000.3.23f1.
+2. Pulsar Play y hacer clic dentro de Game.
+3. Mover el zorro con WASD o las flechas.
+4. Las gemas suman 10 puntos. Las cerezas restan 5 y quitan una vida.
+5. Los tres corazones se muestran en la esquina superior derecha.
+6. R reinicia la partida, los puntos, los objetos y los tres corazones.
+
+CONFIGURACION SEGUN EL DOCUMENTO
+- Canvas existente: Interfaz.
+- Panel de vidas: PlayerHUD, con Horizontal Layout Group.
+- Child Alignment: Middle Left.
+- Tres hijos Image con un sprite de corazon, asignados al array corazones.
+- Script PlayerVidas en PlayerHUD.
+- Awake inicializa vidas usando corazones.Length.
+- TakeDamage resta una vida.
+- UpdateCorazones recorre el array y usa Image.enabled = i < vidas.
+- Script ColliderObjetos colocado en Zorro.
+- Awake usa GameObject.Find("PlayerHUD") y GetComponent<PlayerVidas>().
+- Deteccion mediante OnTriggerEnter2D y CompareTag.
+- Gemas: Tag Moneda. Se recogen, suman 10 y desaparecen.
+- Cerezas: Tag Enemigo. Llaman a TakeDamage, restan 5 y desaparecen.
+- Corazon del tutorial: Tag Corazon. Se recoge y desaparece, sin curar,
+  igual que en la version del script que muestra el documento.
+
+DETALLE LITERAL DEL EJEMPLO
+El documento usa if (vidas < 0), no if (vidas <= 0).
+Por eso, con tres corazones:
+Inicio: 3 corazones.
+Primer golpe: 2.
+Segundo golpe: 1.
+Tercer golpe: 0, el juego continua.
+Cuarto golpe: -1, Game Over.
+Se mantiene esta logica para seguir el archivo y sus preguntas.
+
+Al terminar se imprime Game Over y se llama a Application.Quit(), como
+indica el tutorial. En el Editor, Application.Quit no cierra Unity; se
+muestra un aviso y se detienen el jugador y las interacciones. R permite
+reiniciar. En un ejecutable, Application.Quit cierra el juego.
+
+ARCHIVOS PARA REVISAR
+Assets/Actividad/Scripts/PlayerVidas.cs
+Assets/Actividad/Scripts/ColliderObjetos.cs
+Assets/Actividad/Scripts/ColectableActividad.cs (solo animacion visual)
+VerificacionActividad/resultado-vidas.txt (pruebas del sistema actual)
+VerificacionActividad/diseno-conservado.txt (verificacion del escenario)
+VerificacionActividad/Nivel1-vidas.png (estado inicial)
+VerificacionActividad/Vidas-GameOver.png (estado al terminar)
+
+RESPALDO
+RespaldoAntesVidas contiene la escena y los archivos anteriores a esta
+actualizacion. RespaldoAntesActividad y SampleScene tambien se conservan.

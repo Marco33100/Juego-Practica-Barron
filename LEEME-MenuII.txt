@@ -1,0 +1,56 @@
+ACTIVIDAD: MENU PRINCIPAL Y AJUSTES EN UNITY
+Proyecto modificado: C:\Users\marti\Downloads\Proyecto2
+
+COMO ABRIRLO
+Abre Assets/Scenes/Menu.unity y pulsa Play.
+Jugar abre la escena original Nivel1. Escape permite regresar al menu.
+La escena Menu es la primera de las escenas incluidas en el ejecutable.
+
+OBJETOS Y ARCHIVOS PRINCIPALES
+Assets/Scenes/Menu.unity
+Canvas > MainPanel, SettingsPanel, ScoresPanel, CreditsPanel.
+MenuController: referencias conectadas en el Inspector.
+MusicPlayer: audio proporcionado por el usuario; Loop y Play On Awake activos.
+Assets/MenuII/Scripts/MenuController.cs: adaptacion del ejemplo MenuManager del profesor.
+Assets/MenuII/Scripts/BrilloGlobal.cs: aplica brillo y permite volver del juego con Escape.
+Assets/MenuII/Prefabs/BotonMenu.prefab: boton de referencia para los cinco botones principales.
+
+VALORES DEL DOCUMENTO II
+Fondo #0A3D4A, texto crema #E8F4F4, etiquetas #F0C14B.
+Boton resaltado #3ECFCF, presionado #A0A0A0; transicion 0.1 segundos.
+Canvas: 1920x1080, Scale With Screen Size, Match 0.5.
+MainPanel: Vertical Layout Group, spacing 24, Middle Center, sin estirar hijos.
+Botones: 580x95, letra 56, iconos 44x44, Horizontal Layout Group con spacing 14.
+SettingsPanel: padding 100/100/70/70, spacing 32, Upper Center.
+Ajustes: titulo 60 y altura 80. Volver: 85x85, posicion 65/-65, icono 44x44.
+Nombre: 560x55, Standard, limite 16. Placeholder Tu nombre... 32/#88AAAA; texto 36/#E8F4F4.
+Calidad: 560x55; Baja, Media, Alta, Ultra; Alta por defecto. Caption 34, opciones 30.
+Brillo: etiqueta 36, altura 50; Slider 560x48, rango 0..1, inicial 0.8.
+Barra: altura 16, relleno #3ECFCF, Handle ancho 40 y Preserve Aspect.
+Pantalla completa: 560x65, activa al inicio; fondo 60x60, marca 34x34, letra 36.
+Puntuaciones: titulo 56; cuatro registros de ejemplo con letra 36.
+Creditos: nombre del proyecto y actividad, centrados, con Volver.
+
+MUSICA Y AJUSTES
+Audio: prettyjohn1-halloween-halloween-music-620626.mp3.
+El segundo Slider controla el volumen; brillo y volumen son independientes.
+Nombre, calidad, brillo, volumen y pantalla completa se guardan entre ejecuciones.
+Pantalla completa se comprueba en el ejecutable de Windows; el Editor no cambia de pantalla.
+Los perfiles Baja/Media/Alta/Ultra tambien estan en Project Settings > Quality.
+
+RECURSOS DE BOTONES
+Se utilizan los sprites importados por el usuario en Assets/FreeButtonSet: botones alargados y
+redondos, controles e iconos de 64x64. Los botones conservan su color amarillo original y usan
+texto oscuro para legibilidad. Bordes 9-slice y medidas del documento aplicados.
+
+NIVEL EXISTENTE
+Se conserva Nivel1, sus scripts de movimiento y recogida, el zorro, el escenario y las ocho frutas.
+Los puntos siguen sumando/restando en la consola como antes. No se agregan vidas ni Game Over.
+El respaldo anterior a los cambios esta indicado en VerificacionMenuII/respaldo.txt.
+
+COMPROBACION Y ENTREGA
+Capturas de los cuatro paneles: VerificacionMenuII/Capturas.
+Informes de comprobacion: VerificacionMenuII/resultado-editor.txt y resultado-build.txt.
+Ejecutable: Builds/MenuII/Proyecto2_MenuII.exe (mantener junto a sus archivos y carpetas).
+Los archivos bajo Assets/MenuII/Editor y Pruebas son utilidades de creacion/verificacion;
+la verificacion automatica solo se ejecuta al solicitarla, nunca al jugar normalmente.

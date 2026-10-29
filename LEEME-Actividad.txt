@@ -1,0 +1,50 @@
+ACTUALIZACION: SISTEMA DE VIDAS
+Consultar LEEME-Vidas.txt para el comportamiento actual y las pruebas.
+Esta guia se conserva como referencia de la version inicial.
+
+EL ZORRO Y LAS GEMAS - PROYECTO2
+
+COMO JUGAR
+1. Abrir Proyecto2 con Unity 6000.3.23f1.
+2. Abrir Assets/Scenes/Nivel1.unity.
+3. Pulsar Play y hacer clic dentro de Game.
+4. Moverse con W, A, S, D o las flechas. Se permiten diagonales.
+5. Recoger las 8 gemas (+10 cada una) y evitar las 5 cerezas (-5 cada una).
+6. R reinicia el nivel, el marcador y los coleccionables.
+
+IMPLEMENTACION
+- Se conserva el zorro y sus animaciones originales, segun lo solicitado.
+- Movimiento libre en dos dimensiones, sin gravedad, sin girar y con
+  la misma rapidez al moverse en diagonal.
+- Spritesheets importados y cortados, PPU 16 y filtro Point.
+  Los cortes respetan el tamano real de cada fotograma de los archivos:
+  gemas 15x13, cerezas 21x21, aguila 40x41 y StaticTiles 16x16.
+  El aguila queda disponible como recurso; el jugador sigue siendo el zorro.
+- Entorno con Tilemaps de suelo/pasto, senderos y decoracion de StaticTiles.
+- Vallas, barriles, cajas, rocas y plantas distribuidos por el mapa.
+- 8 gemas y 5 cerezas animadas con sus Tags y colliders en modo Trigger.
+- Cada coleccionable modifica el puntaje una sola vez y desaparece.
+- Puntaje en pantalla y en la consola en cada cambio. Admite negativos.
+- Cuatro objetos vacios con BoxCollider2D, sin Trigger, cierran el mapa.
+- Camara que sigue al jugador y respeta los limites del mapa.
+- Mensaje al recoger las ocho gemas.
+- Nivel1 configurado como la escena de inicio para una compilacion.
+
+ARCHIVOS
+Assets/Scenes/Nivel1.unity: escena de la actividad.
+Assets/Actividad/Scripts: codigo de la actividad y verificacion automatica.
+Assets/Actividad/Sprites: recursos entregados, con sus cortes de sprites.
+Assets/Actividad/Tiles: baldosas utilizadas por el mapa.
+VerificacionActividad/resultado.txt: resultado de las pruebas.
+VerificacionActividad/Nivel1.png: captura del nivel.
+
+RESPALDO
+Assets/Scenes/SampleScene.unity conserva la escena anterior.
+Los scripts anteriores ControlZorro y ControlPlayer no se modificaron.
+RespaldoAntesActividad contiene una copia de la escena original y de las
+configuraciones que existian antes de preparar la actividad.
+
+REQUISITOS DEL DOCUMENTO
+La unica sustitucion solicitada es usar el zorro en lugar del aguila.
+Si el docente exige especificamente el aguila, sera necesario cambiar
+el personaje y sus animaciones; el spritesheet del aguila ya esta importado.
